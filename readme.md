@@ -4,8 +4,14 @@
 
 > Inspired by [sindresorhus's github-notifier](https://github.com/sindresorhus/github-notifier-chrome)
 
-[![](screenshot.png)][install]
+<img src="screenshot.png" width="100%">
 
+
+## Install
+
+1. Clone this project to local
+
+2. Load this extesion dir to Chrome extension
 
 ## License
 
