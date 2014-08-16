@@ -16,11 +16,11 @@
 	}
 
 	function update() {
-		gitHubNotifCount(function (count) {
+		notifyCount(function (count) {
 			if (count < 0) {
 				var text;
 				if (count === -1) {
-					text = 'You have to be connected to the internet and logged into GitHub';
+					text = 'You have to be connected to the internet and logged into Coding.net';
 				} else if (count === -2) {
 					text = 'Unable to find count on page';
 				}
@@ -40,7 +40,7 @@
 
 	chrome.browserAction.onClicked.addListener(function (tab) {
 		var notifTab = {
-			url: 'https://coding.net/user/notifications'//GitHubNotify.settings.get('notificationUrl')
+			url: 'https://coding.net/user/notifications'
 		};
 		if (tab.url === '' || tab.url === 'chrome://newtab/' || tab.url === notifTab.url) {
 			chrome.tabs.update(null, notifTab);

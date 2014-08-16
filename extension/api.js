@@ -14,7 +14,7 @@
 		};
 	})();
 
-	window.GitHubNotify = (function () {
+	window.CodingNotify = (function () {
 		var defaults = {
 			notificationUrl: 'https://coding.net/api/user/unread-count',
 			useParticipatingCount: false
@@ -42,9 +42,9 @@
 		return api;
 	})();
 
-	window.gitHubNotifCount = function (callback) {
+	window.notifyCount = function (callback) {
 
-		xhr('GET', GitHubNotify.settings.get('notificationUrl'), function (data, status) {
+		xhr('GET', CodingNotify.settings.get('notificationUrl'), function (data, status) {
 			data = JSON.parse(data);
 			if (status >= 400) {
 				callback(-1);
@@ -57,7 +57,7 @@
 			Object.keys(data['data']).forEach(function(key){
 				total += data['data'][key];
 			});
-			callback(total + '');
+			callback(total ? (total + '') : '' );
 		});
 	};
 })();
